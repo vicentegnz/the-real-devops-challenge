@@ -1,0 +1,4 @@
+FROM mongo
+
+COPY ./restaurant.json /initRestaurants.json
+CMD mongoimport --host mongo --db restaurants_db --collection restaurant --type json --file /initRestaurants.json --jsonArray
